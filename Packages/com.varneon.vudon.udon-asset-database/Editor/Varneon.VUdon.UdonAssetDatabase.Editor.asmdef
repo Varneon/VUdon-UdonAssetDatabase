@@ -1,7 +1,9 @@
 {
     "name": "Varneon.VUdon.UdonAssetDatabase.Editor",
     "references": [
-        "Varneon.VUdon.UdonAssetDatabase.Runtime"
+        "UdonSharp.Runtime",
+        "Varneon.VUdon.UdonAssetDatabase.Runtime",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [
         "Editor"
