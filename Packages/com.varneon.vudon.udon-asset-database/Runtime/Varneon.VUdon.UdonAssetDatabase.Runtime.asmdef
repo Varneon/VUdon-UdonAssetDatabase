@@ -2,7 +2,9 @@
     "name": "Varneon.VUdon.UdonAssetDatabase.Runtime",
     "references": [
         "UdonSharp.Runtime",
-        "VRC.Udon"
+        "VRC.Udon",
+        "Varneon.VUdon.Logger.Runtime",
+        "Varneon.VUdon.ArrayExtensions.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
