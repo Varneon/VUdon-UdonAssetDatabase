@@ -20,28 +20,28 @@ namespace Varneon.VUdon.UdonAssetDatabase
         internal GameObject[] roots;
 
         [SerializeField, HideInInspector]
-        internal string pathLookup;
+        internal string pathLookup = string.Empty;
 
         [SerializeField, HideInInspector]
-        internal int pathCount;
+        internal int pathCount = 0;
 
         [SerializeField, HideInInspector]
-        internal Object[] assets;
+        internal Object[] assets = new Object[0];
 
         [SerializeField, HideInInspector]
-        internal string shaderData;
+        internal string shaderData = string.Empty;
 
         [SerializeField, HideInInspector]
-        internal int shaderCount;
+        internal int shaderCount = 0;
 
         [SerializeField, HideInInspector]
-        internal string[] folderPaths;
+        internal string[] folderPaths = new string[0];
 
         [SerializeField, HideInInspector]
-        internal string[] assetPaths;
+        internal string[] assetPaths = new string[0];
 
         [SerializeField, HideInInspector]
-        internal string[] assetGUIDs;
+        internal string[] assetGUIDs = new string[0];
 
         [SerializeField]
         private Logger.Abstract.UdonLogger logger;
