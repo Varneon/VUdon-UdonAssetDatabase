@@ -122,12 +122,12 @@ namespace Varneon.VUdon.UdonAssetDatabase
 
         private void Log(string message)
         {
-            logger.LogFormat("{0} {1}", LOG_PREFIX, message);
+            if (logger) { logger.LogFormat("{0} {1}", LOG_PREFIX, message); }
         }
 
         private void LogError(string message)
         {
-            logger.LogErrorFormat("{0} {1}", LOG_PREFIX, message);
+            if (logger) { logger.LogErrorFormat("{0} {1}", LOG_PREFIX, message); }
         }
     }
 }
