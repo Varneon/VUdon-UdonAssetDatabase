@@ -12,11 +12,11 @@ UdonSharp prefab for making Unity project's AssetDatabase partially available in
 
 ### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
 
-> 1. Download `com.varneon.vudon.repository-template.zip` from [here](https://github.com/Varneon/Repository-Template-VUdon/releases/latest)
+> 1. Download `com.varneon.vudon.udon-asset-database.zip` from [here](https://github.com/Varneon/VUdon-UdonAssetDatabase/releases/latest)
 > 2. Unpack the .zip somewhere
 > 3. In VRChat Creator Companion, navigate to `Settings` > `User Packages` > `Add`
-> 4. Navigate to the unpacked folder, `com.varneon.vudon.repository-template` and click `Select Folder`
-> 5. `VUdon - Repository Template` should now be visible under `Local User Packages` in the project view in VRChat Creator Companion
+> 4. Navigate to the unpacked folder, `com.varneon.vudon.udon-asset-database` and click `Select Folder`
+> 5. `VUdon - UdonAssetDatabase` should now be visible under `Local User Packages` in the project view in VRChat Creator Companion
 > 6. Click `Add`
 
 </details><details><summary>
@@ -24,13 +24,13 @@ UdonSharp prefab for making Unity project's AssetDatabase partially available in
 ### Import with [Unity Package Manager (git)](https://docs.unity3d.com/2019.4/Documentation/Manual/upm-ui-giturl.html):</summary>
 
 > 1. In the Unity toolbar, select `Window` > `Package Manager` > `[+]` > `Add package from git URL...` 
-> 2. Copy and paste the following link into the URL input field: <pre lang="md">https://github.com/Varneon/Repository-Template-VUdon.git?path=/Packages/com.varneon.vudon.repository-template</pre>
+> 2. Copy and paste the following link into the URL input field: <pre lang="md">https://github.com/Varneon/VUdon-UdonAssetDatabase.git?path=/Packages/com.varneon.vudon.udon-asset-database</pre>
 
 </details><details><summary>
 
 ### Import from [Unitypackage](https://docs.unity3d.com/2019.4/Documentation/Manual/AssetPackagesImport.html):</summary>
 
-> 1. Download latest `com.varneon.vudon.repository-template.unitypackage` from [here](https://github.com/Varneon/Repository-Template-VUdon/releases/latest)
+> 1. Download latest `com.varneon.vudon.udon-asset-database.unitypackage` from [here](https://github.com/Varneon/VUdon-UdonAssetDatabase/releases/latest)
 > 2. Import the downloaded .unitypackage into your Unity project
 
 </details>
