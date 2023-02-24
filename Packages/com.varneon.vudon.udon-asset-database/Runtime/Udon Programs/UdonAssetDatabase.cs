@@ -1,4 +1,5 @@
-﻿using UdonSharp;
+﻿using JetBrains.Annotations;
+using UdonSharp;
 using UnityEngine;
 using Varneon.VUdon.ArrayExtensions;
 using Varneon.VUdon.UdonAssetDatabase.Enums;
@@ -48,6 +49,7 @@ namespace Varneon.VUdon.UdonAssetDatabase
 
         private const string LOG_PREFIX = "[<color=#B8B>UdonAssetDatabase</color>]:";
 
+        [PublicAPI]
         public Object LoadAssetAtPath(string path)
         {
             int assetIndex = assetPaths.IndexOf(path);
@@ -57,6 +59,7 @@ namespace Varneon.VUdon.UdonAssetDatabase
             return assets[assetIndex];
         }
 
+        [PublicAPI]
         public Object LoadAssetWithGUID(string guid)
         {
             int assetIndex = assetGUIDs.IndexOf(guid);
@@ -66,6 +69,7 @@ namespace Varneon.VUdon.UdonAssetDatabase
             return assets[assetIndex];
         }
 
+        [PublicAPI]
         public string GetAssetPath(Object asset)
         {
             int assetIndex = assets.IndexOf(asset);
@@ -75,6 +79,7 @@ namespace Varneon.VUdon.UdonAssetDatabase
             return assetPaths[assetIndex];
         }
 
+        [PublicAPI]
         public string[] GetFilesInDirectory(string directory)
         {
             string[] files = new string[0];
@@ -103,6 +108,7 @@ namespace Varneon.VUdon.UdonAssetDatabase
             return files;
         }
 
+        [PublicAPI]
         public string GetShaderData(Shader shader)
         {
             string name = shader.name;
