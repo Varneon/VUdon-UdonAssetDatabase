@@ -14,11 +14,17 @@ namespace Varneon.VUdon.UdonAssetDatabase
     {
         public string[] FolderPaths => folderPaths;
 
+        [Header("Settings")]
         [SerializeField]
         internal UdonAssetDatabaseScope scope = UdonAssetDatabaseScope.Scene;
 
         [SerializeField]
         internal GameObject[] roots;
+
+        [Space]
+        [Header("Debug")]
+        [SerializeField]
+        private Logger.Abstract.UdonLogger logger;
 
         [SerializeField, HideInInspector]
         internal string pathLookup = string.Empty;
@@ -26,7 +32,9 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [SerializeField, HideInInspector]
         internal int pathCount = 0;
 
-        [SerializeField, HideInInspector]
+        [Space]
+        [Header("Database Data")]
+        [SerializeField]
         internal Object[] assets = new Object[0];
 
         [SerializeField, HideInInspector]
@@ -35,17 +43,14 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [SerializeField, HideInInspector]
         internal int shaderCount = 0;
 
-        [SerializeField, HideInInspector]
+        [SerializeField]
         internal string[] folderPaths = new string[0];
 
-        [SerializeField, HideInInspector]
+        [SerializeField]
         internal string[] assetPaths = new string[0];
 
         [SerializeField, HideInInspector]
         internal string[] assetGUIDs = new string[0];
-
-        [SerializeField]
-        private Logger.Abstract.UdonLogger logger;
 
         private const string LOG_PREFIX = "[<color=#B8B>UdonAssetDatabase</color>]:";
 
