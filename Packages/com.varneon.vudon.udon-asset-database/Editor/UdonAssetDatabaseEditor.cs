@@ -114,25 +114,25 @@ namespace Varneon.VUdon.UdonAssetDatabase.Editor
 
             shaders.UnionWith(database.assets.OfType<Material>().Select(m => m.shader));
 
-            StringBuilder stringBuilder = new StringBuilder();
+            string[][] shaderData = new string[shaders.Count][];
 
-            stringBuilder.Append("\n");
-
-            foreach (Shader shader in shaders)
+            for (int i = 0; i < shaders.Count; i++)
             {
-                stringBuilder.Append(shader.name);
+                Shader shader = shaders.ElementAt(i);
 
-                for (int i = 0; i < shader.GetPropertyCount(); i++)
+                List<string> properties = new List<string>();
+
+                for (int j = 0; j < shader.GetPropertyCount(); j++)
                 {
-                    stringBuilder.Append($"\n{(int)shader.GetPropertyType(i)} {shader.GetPropertyName(i)}");
+                    properties.Add(string.Join(" ", (int)shader.GetPropertyType(j), shader.GetPropertyName(j)));
                 }
 
-                stringBuilder.Append("\n\n");
+                shaderData[i] = properties.ToArray();
             }
 
-            string shaderData = stringBuilder.ToString();
-
             Undo.RecordObject(database, "Generate shader library");
+
+            database.shaderNames = shaders.Select(s => s.name).ToArray();
 
             database.shaderData = shaderData;
 
@@ -173,7 +173,7 @@ namespace Varneon.VUdon.UdonAssetDatabase.Editor
 
             ArrayUtility.Clear(ref database.assetGUIDs);
 
-            database.shaderData = string.Empty;
+            ArrayUtility.Clear(ref database.shaderData);
 
             database.shaderCount = 0;
         }

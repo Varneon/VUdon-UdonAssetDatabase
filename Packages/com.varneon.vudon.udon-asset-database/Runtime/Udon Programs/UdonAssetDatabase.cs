@@ -14,6 +14,8 @@ namespace Varneon.VUdon.UdonAssetDatabase
     {
         public string[] FolderPaths => folderPaths;
 
+        public string[] ShaderNames => shaderNames;
+
         [Header("Settings")]
         [SerializeField]
         internal UdonAssetDatabaseScope scope = UdonAssetDatabaseScope.Scene;
@@ -38,7 +40,10 @@ namespace Varneon.VUdon.UdonAssetDatabase
         internal Object[] assets = new Object[0];
 
         [SerializeField, HideInInspector]
-        internal string shaderData = string.Empty;
+        internal string[] shaderNames = new string[0];
+
+        [SerializeField, HideInInspector]
+        internal string[][] shaderData = new string[0][];
 
         [SerializeField, HideInInspector]
         internal int shaderCount = 0;
@@ -114,21 +119,15 @@ namespace Varneon.VUdon.UdonAssetDatabase
         }
 
         [PublicAPI]
-        public string GetShaderData(Shader shader)
+        public string[] GetShaderData(Shader shader)
         {
             string name = shader.name;
 
-            int dataNameHeaderIndex = shaderData.IndexOf($"\n{name}\n");
+            int shaderIndex = shaderNames.IndexOf(name);
 
-            if(dataNameHeaderIndex < 0) { Log($"Couldn't find shader from database: <color=#888>{name}</color>"); return string.Empty; }
+            if (shaderIndex < 0) { Log($"Couldn't find shader from database: <color=#888>{name}</color>"); return null; }
 
-            int dataNameHeaderEndIndex = shaderData.IndexOf("\n", dataNameHeaderIndex + 1) + 1;
-
-            int dataEndIndex = shaderData.IndexOf("\n\n", dataNameHeaderEndIndex + 1);
-
-            if(dataEndIndex < 0) { LogError("Invalid/corrupted database shader data!"); return string.Empty; }
-
-            return shaderData.Substring(dataNameHeaderEndIndex, dataEndIndex - dataNameHeaderEndIndex);
+            return shaderData[shaderIndex];
         }
 
         private void Log(string message)
