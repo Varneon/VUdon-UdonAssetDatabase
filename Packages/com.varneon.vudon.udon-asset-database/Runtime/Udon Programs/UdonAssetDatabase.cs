@@ -130,6 +130,23 @@ namespace Varneon.VUdon.UdonAssetDatabase
             return shaderData[shaderIndex];
         }
 
+        [PublicAPI]
+        public bool TryAssignDefaultLogger(Logger.Abstract.UdonLogger udonLogger)
+        {
+            if(logger != null) { return false; }
+
+#if UNITY_EDITOR && !COMPILER_UDONSHARP
+            if (!UnityEditor.BuildPipeline.isBuildingPlayer && !UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+            {
+                UnityEditor.Undo.RecordObject(this, "Assign UdonAssetDatabase Logger");
+            }
+#endif
+
+            logger = udonLogger;
+
+            return true;
+        }
+
         private void Log(string message)
         {
             if (logger) { logger.LogFormat("{0} {1}", LOG_PREFIX, message); }
