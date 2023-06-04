@@ -23,7 +23,6 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [SerializeField]
         internal GameObject[] roots;
 
-        [Space]
         [Header("Debug")]
         [SerializeField]
         private Logger.Abstract.UdonLogger logger;
@@ -34,7 +33,6 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [SerializeField, HideInInspector]
         internal int pathCount = 0;
 
-        [Space]
         [Header("Database Data")]
         [SerializeField]
         internal Object[] assets = new Object[0];
