@@ -6,7 +6,7 @@
 
 UdonSharp prefab for making Unity project's AssetDatabase partially available in VRChat worlds using Udon
 
-![image](https://user-images.githubusercontent.com/26690821/221271335-3cb9f4f9-022e-4a51-b707-22b4b3f5936c.png)
+![image](https://github.com/Varneon/VUdon-UdonAssetDatabase/assets/26690821/17bee9f8-5eaf-4b1f-b78b-6008c1a2f518)
 
 # Installation
 
