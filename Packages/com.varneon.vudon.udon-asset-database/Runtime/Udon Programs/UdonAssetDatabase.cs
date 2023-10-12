@@ -60,6 +60,8 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [PublicAPI]
         public Object LoadAssetAtPath(string path)
         {
+            if (string.IsNullOrWhiteSpace(path)) { return null; }
+
             int assetIndex = assetPaths.IndexOf(path);
 
             if(assetIndex < 0) { return null; }
@@ -70,6 +72,8 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [PublicAPI]
         public Object LoadAssetWithGUID(string guid)
         {
+            if (string.IsNullOrWhiteSpace(guid)) { return null; }
+
             int assetIndex = assetGUIDs.IndexOf(guid);
 
             if(assetIndex < 0) { return null; }
@@ -80,6 +84,8 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [PublicAPI]
         public string GetAssetPath(Object asset)
         {
+            if(asset == null) { return string.Empty; }
+
             int assetIndex = assets.IndexOf(asset);
 
             if(assetIndex < 0) { Log($"Couldn't find asset from database: <color=#888>{asset}</color>"); return string.Empty; }
@@ -90,6 +96,8 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [PublicAPI]
         public string[] GetFilesInDirectory(string directory)
         {
+            if (string.IsNullOrWhiteSpace(directory)) { return new string[0]; }
+
             string[] files = new string[0];
 
             int currentIndex = 0;
@@ -119,6 +127,8 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [PublicAPI]
         public string[] GetShaderData(Shader shader)
         {
+            if(shader == null) { return new string[0]; }
+
             string name = shader.name;
 
             int shaderIndex = shaderNames.IndexOf(name);
