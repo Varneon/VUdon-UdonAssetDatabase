@@ -1,7 +1,7 @@
 {
   "name": "com.varneon.vudon.udon-asset-database",
   "displayName": "VUdon - UdonAssetDatabase",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.1-alpha.1",
   "unity": "2019.4",
   "unityRelease": "29f1",
   "description": "UdonSharp prefab for making Unity project's AssetDatabase partially available in VRChat worlds using Udon",
