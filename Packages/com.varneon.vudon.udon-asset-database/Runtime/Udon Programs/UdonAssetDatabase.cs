@@ -34,6 +34,9 @@ namespace Varneon.VUdon.UdonAssetDatabase
         internal int pathCount = 0;
 
         [Header("Database Data")]
+#if UNITY_2020_2_OR_NEWER
+        [NonReorderable]
+#endif
         [SerializeField]
         internal Object[] assets = new Object[0];
 
@@ -46,9 +49,15 @@ namespace Varneon.VUdon.UdonAssetDatabase
         [SerializeField, HideInInspector]
         internal int shaderCount = 0;
 
+#if UNITY_2020_2_OR_NEWER
+        [NonReorderable]
+#endif
         [SerializeField]
         internal string[] folderPaths = new string[0];
 
+#if UNITY_2020_2_OR_NEWER
+        [NonReorderable]
+#endif
         [SerializeField]
         internal string[] assetPaths = new string[0];
 
