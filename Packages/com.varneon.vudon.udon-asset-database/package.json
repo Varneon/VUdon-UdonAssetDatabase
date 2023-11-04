@@ -11,9 +11,13 @@
   },
   "resolutionStrategy": "highestMinor",
   "dependencies": {
-    "com.vrchat.worlds": "3.4.0"
+    "com.vrchat.worlds": "3.4.0",
+    "com.varneon.vudon.array-extensions": "0.3.1",
+    "com.varneon.vudon.logger": "0.4.0-alpha.4"
   },
   "vpmDependencies": {
-    "com.vrchat.worlds": ">=3.4.0 <4.0.0"
+    "com.vrchat.worlds": ">=3.4.0 <4.0.0",
+    "com.varneon.vudon.array-extensions": ">=0.3.1",
+    "com.varneon.vudon.logger": ">=0.4.0-alpha.4"
   }
 }
